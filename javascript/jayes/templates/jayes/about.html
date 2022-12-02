@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color:purple; color:white">
+<p>JavaScript IF, ELSE IF, ELSE:</p>
+<p>Display "Good day!" if the hour is less than 18:00:</p>
+<p id="demo">Good Evening!</p>
+<script type="text/javascript">
+hour = new Date().getHours();
+let greeting;
+if (hour<10){
+greeting  = "Good morning!";(hour < 20){
+}else if
+greeting = 'Good day!';
+} else{
+greeting  = "Good evening!";
+}
+document.getElementById('demo').innerHTML = greeting;
+
+
+
+</script>
+<p>JavaScript SWITCH:</p>
+<p id="demo2">Which day?</p>
+<script type="text/javascript">
+let day;
+switch (new Date().getDay()) {
+
+  default:
+    day='Not telling, bitch';
+    break;
+
+  case 0:
+    day = "Sunday";
+    break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+    day = "Tuesday";
+    break;
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+<!--    day = "Thursday";-->
+<!--    break;-->
+  case 5:
+    day = "Friday";
+    break;
+  case  6:
+    day = "Saturday";
+    break;
+
+}
+
+document.getElementById("demo2").innerHTML = day;
+
+<!--When JavaScript reaches a break keyword, it breaks out of the switch block.-->
+<!--This will stop the execution inside the switch block.-->
+<!--It is not necessary to break the last case in a switch block. The block breaks (ends) there anyway.-->
+
+</script>
+<p id="demo3">XXX</p>
+<script>
+let x = '0';
+switch (x) {
+    case 0:
+        text = 'off';
+        break;
+
+    case 1:
+        text = 'on';
+        break;
+
+    default:
+        text = 'No value found';
+}
+document.getElementById("demo3").innerHTML = text;
+
+</script>
+<p>JavaScript FOR LOOP:</p>
+<p id="demo4">Cars in cars:</p>
+
+<script type="text/javascript">
+const cars=['Audi', 'BMW'];
+document.write(cars);
+
+let text='';
+
+for (let i=0; i<cars.length; i++){
+    text+=cars[i]+'<br>';
+}
+document.getElementById("demo4").innerHTML = text;
+
+
+
+
+</script>
+
+<p></p>
+<script>
+let text2 = 'The numbers from 1 to 5 are: ';
+for (let i=1; i<=5;i++){
+    if (i<5){
+        text2+=i+', '}
+    else {
+        text2+=i}}
+document.write(text2);
+</script>
+<p id="demo5">Yo</p>
+<script>
+
+let i, len, text3;
+
+for (i=0, len = cars.length, text3=''; i<len ;i++){
+text3+=cars[i]+'<br>';
+}
+
+document.write(text3);
+document.write('\n');
+
+<!--document.getElementById("demo5").innerHTML = text3;-->
+
+document.write('\n');
+
+let i2=0;
+let len2=cars.length;
+let text4='';
+
+for (;i2<len2; i2++){
+text4+=cars[i2]+'<br>';
+<!--text4+=i2 +'<br>';-->
+}
+document.write(text4);
+
+document.write('\n');
+
+let i3=0;
+let len3=cars.length;
+let text5 = '';
+
+for ( ; i3<len; ){
+text5+=cars[i3]+'<br>';
+i3++;
+}
+
+document.write(text5);
+
+
+
+</script>
+<p>LOOP SCOPE:</p>
+<p id="demo6"></p>
+<script>
+<!--    text6='';-->
+
+<!--    var i4 = 5;-->
+
+<!--    for (var i4 = 0; i4<10; i4++){-->
+<!--        text6+=i4+', ';-->
+<!--    }-->
+<!--    document.getElementById("demo6").innerHTML = text6;-->
+
+text6='';
+
+    let i4 = 5;
+
+    for (let i4 = 0; i4<10; i4++){
+        text6+=i4+', ';
+    }
+    document.getElementById("demo6").innerHTML = text6;
+
+</script>
+
+<p>LOOP FOR IN:</p>
+<p id="demo7">xx</p>
+<script>
+const person = {first_name:'John', last_name:'Doe', age:25};
+let txt='';
+for (let x in person){
+txt+=x+': '+person[x]+', ';
+}
+document.getElementById("demo7").innerHTML = txt;
+document.write('\n');
+const numbers = [1,2,3,4,5]
+let txt2='';
+for (let x in numbers){
+txt2+=numbers[x]+', ';
+}
+document.write(txt2);
+
+</script>
+
+<p>Array.forEach()</p>
+<script>
+    let t='';
+    numbers.forEach(myFunc);
+    document.write(t);
+    function myFunc(value){
+<!--    function myFunc(value, index, array){-->
+    t+=value+', ';
+    }
+</script>
+
+
+<p>FOR OF:</p>
+<script>
+const a=[1,2,'kk', 'cc']
+document.write(a);
+document.write('\n');
+t2='';
+for (let x of a){
+t2+=x+', ';
+}
+document.write(t2);
+
+let language='JavaScript';
+document.write(language);document.write('\n');
+t3='';
+for (let x of language){
+t3+=x+' ';
+}
+document.write(t3);
+</script>
+<p>WHILE LOOP:</p>
+<script>
+
+t4='';
+let i5 =0;
+while (i5<11){
+t4+=i5;
+i5++;
+}
+document.write(t4);
+document.write('\n');
+
+t6='';
+let i7=0;
+while (cars[i7]){
+t6+=cars[i7]+', ';
+i7++;
+}
+document.write(t6);
+
+
+</script>
+
+<p>DO WHILE LOOP:</p>
+<script>
+
+t5='';
+let i6 =6;
+
+do{
+    t5+=i6;
+    i6++;
+}
+while (i6<5)
+
+document.write(t5);
+
+</script>
+
+</body>
+</html>

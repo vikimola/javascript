@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color:purple; color:white">
+<p>First ph</p>
+
+<script type="text/javascript">
+
+document.write('YYYYY')
+document.write('One line \n Two line')
+console.log("Hello world!");
+    x=5*
+    2;
+    console.log(x);
+
+//alert('One line \n Two line ')//
+/*==
+window.alert('One line \n Two line')*/
+
+var y;
+y=3;
+
+let z;z=45;
+
+document.write(',\n')
+document.write(',\n')
+document.write(x+y)
+
+document.write(',\n')
+document.write(5*10)
+
+document.write('\n')
+document.write(x*10)
+
+document.write(',\n')
+document.write(('A'+' '+'a')+'a')
+
+document.write(',\n')
+document.write(('A'+' '+'a')*2)
+
+var X; X=5;
+document.write(',\n')
+document.write(x+' '+ X)
+
+document.write(',\n')
+j=2;
+j=j+1; document.write(', +',j);
+j=2;
+j=j-1; document.write(', -',j);
+j=2;
+j=j*2; document.write(', *',j);
+j=2;
+j=j/3;  document.write(', /',j);
+j=Math.trunc(j); document.write(', /trunc',j);
+j=2;
+j=j**2;  document.write(', **',j);
+
+// Declare multiple vats at once //
+let a='a', b='b',
+c='c';
+document.write(', ',a,b,c);
+
+var d; document.write(', ',d);
+
+var sz=20;  document.write(', ',sz);
+sz = sz%3;  document.write(', ',sz);
+
+var sz=20;  document.write(', ',sz);
+var sz = ++sz;  document.write(', ',sz);
+
+var sz=20;  document.write(', ',sz);
+var sz = --sz;  document.write(', ',sz);
+
+var sz=20;  document.write(', ',sz);
+var er=3;  document.write(', ',er);
+sz += er;  document.write(', ',sz);
+
+var sz=20;  document.write(', ',sz);
+sz -= er;  document.write(', ',sz);
+
+var sz=20;  document.write(', ',sz);
+sz %=4; document.write(', ',sz);
+
+var sz=20;  document.write(', ',sz);
+var er=3;  document.write(', ',er);
+document.write(', ',sz > er);
+document.write(', ',sz < er);
+document.write(', ',sz <= er);
+document.write(', ',sz >= er);
+document.write(', ',sz != er);
+document.write(', ',sz == er);
+document.write(', ',sz !== er);
+document.write(', ',sz === er);
+document.write(', ',sz>er ? sz:er);
+document.write(', ',sz<er ? sz:er);
+
+var sz=20;  document.write(', ',sz);
+var er='20';  document.write(', ',er);
+document.write(', ',sz === er);
+
+document.write(', && == AND, ');
+document.write(' || == OR, ');
+document.write(' ! == NOT, ');
+
+var fg = 16; document.write(', ',fg);
+document.write(', ', ++fg);
+document.write(', ', ++fg);
+document.write(', ', fg++);
+document.write(', ', typeof fg);
+
+
+var na = '2' * 2; document.write(', ', na);
+document.write(', ', isNaN(na));
+var na2 = 'ba' * 2; document.write(', ', na2);
+document.write(', ', isNaN(na2));
+document.write(', ', isFinite(na2));
+document.write(', ', isFinite(na2/2));
+document.write(', ', typeof na2 );
+var na3; document.write(', ', typeof na3 );
+var na4={c:'w'}; document.write(', ', typeof na4);
+var na5='w'; document.write(', ', typeof na5);
+var na6=['w', 36]; document.write(', ', typeof na6);
+
+
+
+
+
+
+
+</script>
+
+<p>The result of adding 1 + 2 + 3 is:</p>
+<p id="demo"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<script>
+    let x=1+2+3;
+    document.getElementById("demo").innerHTML=x;
+<!--    Addition lint numbers-->
+
+    let f = "John" + " " + "Doe";
+    document.getElementById("demo2").innerHTML=f;
+<!--    Str addition (concatenation)-->
+
+    let g = '6'+1+1;
+    document.getElementById("demo3").innerHTML=g;
+<!--    Addition of str+num == addition of str-->
+
+
+
+
+
+</script>
+
+<p>$ sign:</p>
+<script>
+    let $ = 'Hello world'; document.write($);
+    let $$ = 56; document.write(', ',$$);
+    let $45 = 45; document.write(', ',$45);
+    let a$$ = a; document.write(', ',a$$);
+
+
+
+
+</script>
+
+<p>_sign: private variables:</p>
+<script>
+    let _id = '31561561'; document.write(_id);
+
+
+
+
+</script>
+
+<p>Block Scope:</p>
+<script>
+
+    var h = 6;
+    document.write(h);
+
+    {
+    var h = 2; document.write(', ',h);
+    }
+
+    var h = 7;
+    document.write(', ',h);
+
+
+</script>
+<script>
+
+    let k = 6;
+    document.write(k);
+
+    {
+    let k = 2; document.write(', ',k);
+    }
+
+
+
+</script>
+
+<p>Redeclaring:</p>
+<!--Commented out: NOT allowed-->
+<script>
+var q = 36;  document.write(q);
+<!--let q = 6;  document.write(', ',q);-->
+
+{
+let q = 78;  document.write(', ',q);
+<!--let q = 46;  document.write(', ',q);-->
+}
+
+let w = 45;document.write(', ',w);
+<!--var w = 47;document.write(', ',w);-->
+
+{
+let w = 45;document.write(', ',w);
+<!--var w = 47;document.write(', ',w);-->
+}
+
+const o = 3.14; document.write(', ',o);
+<!--o = o + 3.15; document.write(o); NOPE-->
+
+
+
+</script>
+
+
+<p>Declaring: you van use vars before declaration if its created w/ var, but not let</p>
+<script>
+    s=36; document.write(s);
+    var s;
+
+
+</script>
+
+<script>
+    e=36; document.write(e);
+    let e;
+
+
+</script>
+
+<p>Const:</p>
+<script>
+    const cars=['Audi', 'Volvo', 'BMW'];  document.write(cars );
+
+<!--    cars = ["Toyota", "Volvo", "Audi"]; document.write(cars);-->
+
+    document.write('\n');
+    cars[0]='Mazda';  document.write(cars);
+
+    document.write('\n');
+    cars.push('Audi'); document.write(cars);
+
+    document.write('\n');
+    const car = {type:'BMW', model:'500', color:'white'}; document.write(car);
+    document.write(car['type']);
+    car.color = "red";     document.write(car);
+    car.owner = "Johnson"; document.write(car);
+
+
+</script>
+
+<p>
+    Functions:
+</p>
+<script type="text/javascript">
+
+    function product(a,b){
+    value = a+b;
+    return value;
+    }
+
+
+    document.write('Prod =',product(3,5));
+<!--    console.log('Prod =',product(3,5));-->
+document.write('\n');
+
+
+</script>
+
+<script type="text/javascript">
+
+    let fu = myFunc(4,3);
+
+    function myFunc(a,b){
+    return a**b
+    }
+    document.write(', ', fu);
+</script>
+
+<p id="fah">F to C:</p>
+<script type="text/javascript">
+    function toC(fah){
+    return (5/9) * (fah-32);
+    }
+    document.getElementById("fah").innerHTML=toC(77);
+
+    let fu2 = toC(77);
+    let text = "The temperature is " + fu2 + "* Celsius.";
+    document.write(text);
+    document.write('\n');
+    document.write("The temperature is " + toC(77) + "* Celsius.");
+    document.write('\n');
+</script>
+
+<p>Scopes:</p>
+<script type="text/javascript">
+g1 = 123
+g2 = 123
+function check(){
+g1 = 456;
+var g2 = 456;
+return [g1, g2];
+}
+document.write(check());
+document.write('\n');
+document.write(g1);
+document.write('\n');
+document.write(g2);
+</script>
+<p>Linear arrays:</p>
+<script type="text/javascript">
+arr = Array()
+arr.push('first')
+arr.push('second')
+document.write(arr);
+document.write('\n');
+document.write(arr[0]);
+
+arr2 = Array(1,2,3)
+arr3 =[4,5,6]
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color:lightblue; color:white">
+<h1>Posts</h1>
+
+<form>
+  <input type="text" placeholder="Search.." name="search"
+  {% if search %} value="{{ search }}" {% endif %}
+  >
+  <button type="submit">Search</button>
+<a href="{% url 'posts' %}">Del</a>
+</form>
+
+{% for p in post_list %}
+<ul>
+    <li>{{ p.title }} (
+        <a href="{% url 'pupdate' p.id %}">Edit</a> |
+        <a href="{% url 'pdelete' p.id %}">Delete</a> )
+    </li>
+</ul>
+
+{% endfor %}
+
+<h3><a href="{% url 'pcreate' %}">Create post</a></h3>
+
+</body>
+</html>

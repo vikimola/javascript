@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color:purple; color:white">
+<p>OOP</p>
+<script type="text/javascript">
+
+
+    function PartyAnimal(nam) {
+        this.x = 0;
+        console.log('In the constructor');
+        this.name = nam;
+        console.log('Built ' + nam);
+        this.party = function () {
+            this.x = this.x + 1;
+            console.log(nam + '=' + this.x);
+        }
+    }
+
+
+    an = new PartyAnimal('SAlly');
+    an.party();
+    an.party();
+
+    cecil = new PartyAnimal('Cecil');
+    cecil.party();
+    an.party();
+
+    <!--an.party();-->
+
+</script>
+
+<script>
+    // function personFullName() {
+    //     return this.first + " " + this.last;
+    // }
+    //
+    // function personFullNameRevesred() {
+    //     return this.last + " " + this.first;
+    // }
+
+    function Person(first, last) {
+        this.first = first;
+        this.last = last;
+        // this.fullName = personFullName;
+        // this.fullNameRevesred = personFullNameRevesred;
+    }
+
+    Person.prototype.fullName = function () {
+        return this.first + " " + this.last;
+    }
+
+    Person.prototype.fullNameRevesred = function () {
+        return this.last + " " + this.first;
+    }
+
+    Person.prototype.fullNameUpper = function () {
+        return this.first.toUpperCase() + " " + this.last.toUpperCase();
+    }
+
+    Person.prototype.toString = function () {
+        return '<Person: ' + this.fullName() + '>';
+    }
+
+    const p = new Person("Cecil", "Carlos");
+
+    document.write(p.fullName());
+    document.write("<br>");
+    document.write(p.fullNameRevesred());
+    document.write("<br>");
+    // document.write(personFullNameRevesred());
+    document.write(p.fullNameUpper());
+    document.write("<br>");
+    document.write(p.toString());
+    document.write("<br>");
+
+    String.prototype.reversed = function () {
+        let r = "";
+        for (let i = this.length - 1; i >= 0; i--) {
+            r += this[i];
+        }
+        return r;
+    };
+
+    const s = "cecil";
+    document.write(s.reversed());
+    document.write("<br>");
+    document.write('This can now be reversed'.reversed());
+    document.write("<br>");
+
+    function trivialNew(constructor, ...args) {
+        const o = {};
+        constructor.apply(o, args);
+        return o;
+    }
+
+    const bill2 = new Person("Will", "Lecter");
+    document.write("<br>");
+    document.write(bill2.fullName());
+    // almost equivalent ??
+    // const bill = trivialNew(Person, "Will", "Lecter");
+    // document.write("<br>");
+    // document.write(bill.fullName());
+    document.write("<br>");
+
+    function lastNameCaps() {
+        return this.last.toUpperCase();
+    }
+
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+    const pp = new Person("Will", "Graham");
+    document.write(lastNameCaps.call(pp));
+
+    document.write("<br>");
+
+
+    pp.lastNameCAPS = lastNameCaps;
+    document.write(pp.lastNameCAPS());
+
+    document.write("<br>");
+
+    //    Inner functions
+
+    function parentF() {
+        const a = 1;
+
+        function nestedF() {
+            b = 4;
+            return a + b;
+        }
+
+        return nestedF();
+    }
+
+    document.write(parentF());
+    // document.write(nestedF());
+
+    document.write("<br>");
+
+
+    // Closures
+    function makeAdder(a) {
+        return function (b) {
+            return a + b;
+        }
+    }
+
+    const add5 = makeAdder(5);
+    document.write(add5(6));
+
+
+</script>
+
+
+</body>
+</html>

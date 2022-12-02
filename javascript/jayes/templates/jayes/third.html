@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color:purple; color:white">
+<p>BREAK, CONTINUE</p>
+<script>
+    var txt='';
+    for (let i=0; i<12; i++){
+    if (i===0){continue}
+    if (i===11){break}
+    if (i===10){txt+=i;}
+    else{txt+=i+',';}
+    }
+    document.write(txt)
+    document.write('<br>')
+
+    const cars=["BMW", "Volvo", "Saab", "Ford"];
+    var text='';
+    list:{
+    text += cars[0] + "<br>";
+    text += cars[1] + "<br>";
+    break list;
+    text += cars[2] + "<br>";
+    text += cars[3] + "<br>";
+    }
+    document.write(text)
+
+
+</script>
+<p>SET</p>
+<script>
+    const letters= new Set(['a', 'b']);
+
+<!--    add -->
+    letters.add('c');
+    letters.add('a');
+    letters.delete('a');
+
+<!--for Each(func)-->
+    var txt = '';
+    letters.forEach(function(value){
+    txt+=value+',';
+    })
+    document.write(txt);
+    document.write('<br>');
+
+
+<!--    values() method-->
+    var txt ='';
+    for (const x of letters.values()){
+    txt+=x+',';
+    }
+    document.write(txt);
+    document.write('<br>');
+
+
+</script>
+<p>MAP</p>
+<p id="d">MAP</p>
+<script>
+
+const fruits = new Map();
+fruits.set("apples", 500);
+fruits.set("apples", 200);
+fruits.set("pears", 200);
+document.getElementById("d").innerHTML = fruits.get("apples");
+document.write(fruits.get('apples'));
+
+document.write('<br>');
+
+document.write(fruits.size);
+var s=fruits.size;
+document.write(s);
+
+fruits.delete('pears');
+document.write(fruits.size);
+
+document.write(fruits.has('apples'));
+
+</script>
+<p>ARRAYS</p>
+<script>
+    const car=[];
+    car[0]='BMV';
+    car[1]='Volvo';
+
+    const f = new Array('z', 'a', 'p');
+
+    let c = car[0];
+    document.write(c, ', ');
+    car[0]='Opel';
+    document.write(car);
+
+<!--    adding elements-->
+    f.push('o');
+    f[f.length]='l';
+
+
+
+    document.write('| ',f.sort());
+    document.write('| ',f.length-1);
+
+    var txt = '<ul>';
+    f.forEach(myFunc);
+    txt += '</ul>';
+
+    function myFunc(value){
+    txt+='<li>' + value + '</li>';
+    }
+
+    document.write('| ',txt);
+
+    var txt = '<ul>';
+    for (let i=0; i<f.length; i++){
+        txt+='<li>' + f[i] + '</li>';}
+    txt += '</ul>';
+    document.write(txt);
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

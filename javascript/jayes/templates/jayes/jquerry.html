@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+</head>
+<body style="background-color:purple; color:white">
+Hello <span id="person">Chuck</span>
+<script type="text/javascript">
+console.dir(document.getElementById('person'))
+</script>
+<br>
+<p>xxxxx</p>
+<script type="text/javascript" src="jquery.js">
+</script>
+<script type="text/javascript">
+  $(document).ready(function(){
+  alert("Hello");
+  console.log("yo");
+  });
+</script>
+<!--retrieves a jquerry wrapped version of the document and-->
+<!--then has a member function (ready) that takes one parameter-->
+<!--first class functions -> ready has as a parameter an anonymous function-->
+<script type="text/javascript">
+  $(window).resize(function(){
+  console.log(".resize() called. width="+
+  $(window).width()+" height="+$(window).height());
+  });
+</script>
+<script type="text/javascript">
+console.log([1,2,3,3])
+console.dir([1,2,3,3])
+</script>
+<p id="back">This text will be replaced in 2 seconds</p>
+<p>
+<script type="text/javascript">
+$(document).ready( function () {
+    $.getJSON('{% url 'jsonfun' %}', function(data) {
+      $("#back").html(data.first);
+      console.log(data);
+    })
+});
+</script>
+
+</body>
+</html>

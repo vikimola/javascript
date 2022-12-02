@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if thing_list %}
+<ul>
+    {% for thing in thing_list %}
+    {% if thing.owner_id == user.id %}
+    <li>***</li>
+    {% endif %}
+    {% if user.is_authenticated %}
+    <li> {{thing.title}} <a href="#" onclick=
+            "favPost('{% url 'thing_unfavorite' thing.id %}', {{ thing.id }} );return false;"
+                            id="favorite_star_{{thing.id}}">Fav</a> | <a href="#" onclick=
+            "favPost('{% url 'thing_favorite' thing.id %}', {{ thing.id }} );return false;"
+
+                                                                         id="unfavorite_star_{{thing.id}}">Unfav</a>
+    </li>
+
+    {% endif %}
+    {% endfor %}
+</ul>
+{% else %}
+<p>There are no things in the database.</p>
+{% endif %}
+
+<script>
+function favPost(url, thing_id) {
+    console.log('Requesting JSON');
+    $.post(url, {},  function(rowz){
+        console.log(url, 'finished');
+        $("#unfavorite_star_"+thing_id).toggle();
+        $("#favorite_star_"+thing_id).toggle();
+    }).fail(function(xhr) {
+        alert('Url failed with '+xhr.status+' '+url);
+    });
+}
+
+
+</script>
+
+</body>
+</html>
